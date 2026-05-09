@@ -9,37 +9,63 @@
 <body>
 
     <div class="main-box">
+
         <div class="left-section">
+
             <h1>SplitMate</h1>
             <p class="sub-text">A simple app to split expenses with friends.</p>
 
             <div class="card">
                 <h2>Add People</h2>
-                <input type="text" placeholder="Enter person name">
-                <button>Add Person</button>
+
+                <input type="text" id="personInput" placeholder="Enter person name">
+
+                <button id="addPersonBtn">
+                    Add Person
+                </button>
             </div>
 
             <div class="card">
                 <h2>Add Expense</h2>
+
                 <input type="text" placeholder="Expense title">
+
                 <input type="number" placeholder="Amount">
-                <button>Add Expense</button>
+
+                <button>
+                    Add Expense
+                </button>
             </div>
+
         </div>
 
         <div class="right-section">
+
             <div class="card">
                 <h2>People</h2>
-                <p class="empty-text">No people added yet.</p>
+
+                <div id="peopleList">
+
+                    <p class="empty-text" id="emptyPeople">
+                        No people added yet.
+                    </p>
+
+                </div>
             </div>
 
             <div class="card">
                 <h2>Summary</h2>
-                <p class="empty-text">Your split summary will appear here.</p>
+
+                <p class="empty-text">
+                    Your split summary will appear here.
+                </p>
             </div>
+
         </div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
