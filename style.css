@@ -99,6 +99,36 @@ button:hover {
     font-size: 15px;
 }
 
+.transaction-item {
+    background: #f7f4ef;
+    border: 1px solid #e7dfd5;
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+}
+
+.transaction-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.transaction-title {
+    font-size: 16px;
+    color: #2d2a26;
+    font-weight: bold;
+}
+
+.transaction-amount {
+    color: #6d533c;
+    font-size: 15px;
+}
+
+.transaction-info {
+    font-size: 14px;
+    color: #7c746b;
+}
+
 @media (max-width: 750px) {
 
     .main-box {
