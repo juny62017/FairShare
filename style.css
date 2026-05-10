@@ -129,6 +129,25 @@ button:hover {
     color: #7c746b;
 }
 
+.summary-item {
+    background: #f8f5f0;
+    border: 1px solid #e5ddd2;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.summary-name {
+    font-size: 15px;
+    color: #2d2a26;
+    margin-bottom: 5px;
+}
+
+.summary-price {
+    color: #6d533c;
+    font-size: 14px;
+}
+
 @media (max-width: 750px) {
 
     .main-box {

@@ -13,6 +13,8 @@ let expenseAmount = document.getElementById("expenseAmount");
 
 let transactionList = document.getElementById("transactionList");
 
+let summaryList = document.getElementById("summaryList");
+
 addPersonBtn.onclick = function () {
 
     let personName = personInput.value.trim();
@@ -25,6 +27,8 @@ addPersonBtn.onclick = function () {
     people.push(personName);
 
     renderPeople();
+
+    updateSummary();
 
     personInput.value = "";
 };
@@ -66,14 +70,21 @@ addExpenseBtn.onclick = function () {
         return;
     }
 
+    if (people.length === 0) {
+        alert("Add people first");
+        return;
+    }
+
     let expenseData = {
         title: titleValue,
-        amount: amountValue
+        amount: Number(amountValue)
     };
 
     expenses.push(expenseData);
 
     renderExpenses();
+
+    updateSummary();
 
     expenseTitle.value = "";
     expenseAmount.value = "";
@@ -101,6 +112,7 @@ function renderExpenses() {
 
         expenseBox.innerHTML = `
             <div class="transaction-top">
+
                 <span class="transaction-title">
                     ${expenses[i].title}
                 </span>
@@ -108,13 +120,56 @@ function renderExpenses() {
                 <span class="transaction-amount">
                     ₹${expenses[i].amount}
                 </span>
+
             </div>
 
             <div class="transaction-info">
-                Added expense to the group
+                Split equally between group members
             </div>
         `;
 
         transactionList.appendChild(expenseBox);
+    }
+}
+
+function updateSummary() {
+
+    summaryList.innerHTML = "";
+
+    if (people.length === 0 || expenses.length === 0) {
+
+        summaryList.innerHTML =
+            `<p class="empty-text">
+                Expense summary will appear here.
+            </p>`;
+
+        return;
+    }
+
+    let totalExpense = 0;
+
+    for (let i = 0; i < expenses.length; i++) {
+        totalExpense += expenses[i].amount;
+    }
+
+    let splitAmount = totalExpense / people.length;
+
+    for (let i = 0; i < people.length; i++) {
+
+        let summaryBox = document.createElement("div");
+
+        summaryBox.className = "summary-item";
+
+        summaryBox.innerHTML = `
+            <div class="summary-name">
+                ${people[i]}
+            </div>
+
+            <div class="summary-price">
+                Needs to pay ₹${splitAmount.toFixed(2)}
+            </div>
+        `;
+
+        summaryList.appendChild(summaryBox);
     }
 }
