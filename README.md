@@ -24,4 +24,5 @@ A simple expense splitting website built by me to manage group expenses easily w
 
 
 
+<img width="895" height="430" alt="Screenshot 2026-05-10 172344" src="https://github.com/user-attachments/assets/7bb119f0-52b4-449f-b2ac-21b3dd095c78" />
 
