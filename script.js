@@ -1,5 +1,8 @@
-let people = [];
-let expenses = [];
+let savedPeople = localStorage.getItem("peopleData");
+let savedExpenses = localStorage.getItem("expenseData");
+
+let people = savedPeople ? JSON.parse(savedPeople) : [];
+let expenses = savedExpenses ? JSON.parse(savedExpenses) : [];
 
 let addPersonBtn = document.getElementById("addPersonBtn");
 let personInput = document.getElementById("personInput");
@@ -15,6 +18,10 @@ let transactionList = document.getElementById("transactionList");
 
 let summaryList = document.getElementById("summaryList");
 
+renderPeople();
+renderExpenses();
+updateSummary();
+
 addPersonBtn.onclick = function () {
 
     let personName = personInput.value.trim();
@@ -25,6 +32,8 @@ addPersonBtn.onclick = function () {
     }
 
     people.push(personName);
+
+    saveData();
 
     renderPeople();
 
@@ -81,6 +90,8 @@ addExpenseBtn.onclick = function () {
     };
 
     expenses.push(expenseData);
+
+    saveData();
 
     renderExpenses();
 
@@ -140,6 +151,8 @@ function deleteExpense(index) {
 
     expenses.splice(index, 1);
 
+    saveData();
+
     renderExpenses();
 
     updateSummary();
@@ -185,4 +198,17 @@ function updateSummary() {
 
         summaryList.appendChild(summaryBox);
     }
+}
+
+function saveData() {
+
+    localStorage.setItem(
+        "peopleData",
+        JSON.stringify(people)
+    );
+
+    localStorage.setItem(
+        "expenseData",
+        JSON.stringify(expenses)
+    );
 }
