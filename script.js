@@ -124,12 +124,25 @@ function renderExpenses() {
             </div>
 
             <div class="transaction-info">
-                Split equally between group members
+                Split equally between all members
             </div>
+
+            <button class="delete-btn" onclick="deleteExpense(${i})">
+                Delete
+            </button>
         `;
 
         transactionList.appendChild(expenseBox);
     }
+}
+
+function deleteExpense(index) {
+
+    expenses.splice(index, 1);
+
+    renderExpenses();
+
+    updateSummary();
 }
 
 function updateSummary() {
