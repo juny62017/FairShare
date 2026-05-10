@@ -1,36 +1,27 @@
-==========  SplitMate / FairShare ===============
+# SplitMate / FairShare
 
-A very simple expense splitting website made by me  to divide group expenses easily with friends and teams.....
+A simple expense splitting website built by me to manage group expenses easily with friends, roommates, and teams.
 
-===========================================================================
+---
 
-Features
-Add and remove people
+## Features
 
-Add and delete expenses
-
-Automatic equal expense splitting
-
-payment summary (i loved it )
-
-Local storage support.....
+- Add and remove people instantly
+- Create and manage expenses
+- Delete transactions anytime
+- Automatic equal expense calculation
+- Live payment summary updates
+- Data saved using local storage
 
 
-==================================================================================
+## How It Works
 
-How It Works
-
-Add people to the group.. ( write the names in boxes)
-
-Add expenses with amount
-
-The website automatically calculates how much each person needs to pay
-
-Data stays saved even after refreshing the page
+1. Add people to your group (  2 or 3 )
+2. Enter expense title and amount
+3. Expenses are automatically divided equally
+4. Summary section shows how much each person needs to pay
+5. All data remains saved after refreshing the page
 
 
-one more thing..
-you can even remove 1 person after the bill summary so this time bill will be divided with the rest people
-hahaaa
-<img width="1790" height="860" alt="image" src="https://github.com/user-attachments/assets/96578635-c941-40de-8199-038744462a69" />
+
 
